@@ -1,0 +1,14 @@
+#Generate the image and deploy a Docker container on LXC container
+
+---
+- hosts: docker
+  remote_user: remoto
+  become_user: root
+  become: true
+  tasks:
+    - name: crear imagen de centos para ejecutarse
+      shell: lxc exec docker -- docker build -t lxc/web .
+    - name: crear contenedor weblxc con la imagen creada
+      shell: lxc exec docker -- docker run -d --name webtest2 -p 1080:80 lxc/web
+    - name: redirección de puerto
+      shell: lxc config device add docker httpdPort80docker proxy listen=tcp:192.168.100.4:1080 connect=tcp:127.0.0.1:1080

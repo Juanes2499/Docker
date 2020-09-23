@@ -1,0 +1,80 @@
+● docker.service - Docker Application Container Engine
+   Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sat 2020-09-19 14:07:01 UTC; 16min ago
+     Docs: https://docs.docker.com
+ Main PID: 4260 (dockerd)
+    Tasks: 10
+   CGroup: /system.slice/docker.service
+           └─4260 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+
+Sep 19 14:07:00 servidorUbuntu dockerd[4260]: time="2020-09-19T14:07:00.596514909Z" level=warning msg="Your kernel does not support cgroup rt period"
+Sep 19 14:07:00 servidorUbuntu dockerd[4260]: time="2020-09-19T14:07:00.596671191Z" level=warning msg="Your kernel does not support cgroup rt runtime"
+Sep 19 14:07:00 servidorUbuntu dockerd[4260]: time="2020-09-19T14:07:00.597013445Z" level=info msg="Loading containers: start."
+Sep 19 14:07:00 servidorUbuntu dockerd[4260]: time="2020-09-19T14:07:00.928140495Z" level=info msg="Default bridge (docker0) is assigned with an IP address 172.17.0.0/16. Daemon option --bip can be used to set a preferred IP address"
+Sep 19 14:07:01 servidorUbuntu dockerd[4260]: time="2020-09-19T14:07:01.097903952Z" level=info msg="Loading containers: done."
+Sep 19 14:07:01 servidorUbuntu dockerd[4260]: time="2020-09-19T14:07:01.223974383Z" level=info msg="Docker daemon" commit=369ce74a3c graphdriver(s)=overlay2 version=19.03.6
+Sep 19 14:07:01 servidorUbuntu dockerd[4260]: time="2020-09-19T14:07:01.224468716Z" level=info msg="Daemon has completed initialization"
+Sep 19 14:07:01 servidorUbuntu systemd[1]: Started Docker Application Container Engine.
+Sep 19 14:07:01 servidorUbuntu dockerd[4260]: time="2020-09-19T14:07:01.308347912Z" level=info msg="API listen on /var/run/docker.sock"
+Sep 19 14:23:06 servidorUbuntu dockerd[4260]: time="2020-09-19T14:23:06.116048620Z" level=info msg="ignoring event" module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+● docker.service - Docker Application Container Engine
+   Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sat 2020-09-19 14:07:01 UTC; 19min ago
+     Docs: https://docs.docker.com
+ Main PID: 4260 (dockerd)
+    Tasks: 10
+   CGroup: /system.slice/docker.service
+           └─4260 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+
+Sep 19 14:07:00 servidorUbuntu dockerd[4260]: time="2020-09-19T14:07:00.596671191Z" level=warning msg="Your kernel does not support cgroup rt runtime"
+Sep 19 14:07:00 servidorUbuntu dockerd[4260]: time="2020-09-19T14:07:00.597013445Z" level=info msg="Loading containers: start."
+Sep 19 14:07:00 servidorUbuntu dockerd[4260]: time="2020-09-19T14:07:00.928140495Z" level=info msg="Default bridge (docker0) is assigned with an IP address 172.17.0.0/16. Daemon option --bip can be used to set a preferred IP address"
+Sep 19 14:07:01 servidorUbuntu dockerd[4260]: time="2020-09-19T14:07:01.097903952Z" level=info msg="Loading containers: done."
+Sep 19 14:07:01 servidorUbuntu dockerd[4260]: time="2020-09-19T14:07:01.223974383Z" level=info msg="Docker daemon" commit=369ce74a3c graphdriver(s)=overlay2 version=19.03.6
+Sep 19 14:07:01 servidorUbuntu dockerd[4260]: time="2020-09-19T14:07:01.224468716Z" level=info msg="Daemon has completed initialization"
+Sep 19 14:07:01 servidorUbuntu systemd[1]: Started Docker Application Container Engine.
+Sep 19 14:07:01 servidorUbuntu dockerd[4260]: time="2020-09-19T14:07:01.308347912Z" level=info msg="API listen on /var/run/docker.sock"
+Sep 19 14:23:06 servidorUbuntu dockerd[4260]: time="2020-09-19T14:23:06.116048620Z" level=info msg="ignoring event" module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Sep 19 14:26:21 servidorUbuntu dockerd[4260]: time="2020-09-19T14:26:21.915436633Z" level=info msg="ignoring event" module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+● docker.service - Docker Application Container Engine
+   Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sun 2020-09-20 23:17:45 UTC; 1h 9min ago
+     Docs: https://docs.docker.com
+ Main PID: 757 (dockerd)
+    Tasks: 24
+   CGroup: /system.slice/docker.service
+           ├─ 757 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+           ├─3230 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 9080 -container-ip 172.17.0.2 -container-port 80
+           └─3565 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 2500 -container-ip 172.17.0.3 -container-port 5000
+
+Sep 20 23:28:44 servidorUbuntu dockerd[757]: time="2020-09-20T23:28:44.011925912Z" level=info msg="Layer sha256:7af52a287280a07d00514682ea94c0c34fb79bf7ca11d69b0fb642889e1aedca cleaned up"
+Sep 20 23:28:44 servidorUbuntu dockerd[757]: time="2020-09-20T23:28:44.290500175Z" level=info msg="Layer sha256:7af52a287280a07d00514682ea94c0c34fb79bf7ca11d69b0fb642889e1aedca cleaned up"
+Sep 20 23:29:04 servidorUbuntu dockerd[757]: time="2020-09-20T23:29:04.764870462Z" level=info msg="ignoring event" module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Sep 20 23:29:48 servidorUbuntu dockerd[757]: time="2020-09-20T23:29:48.180896819Z" level=info msg="Layer sha256:7af52a287280a07d00514682ea94c0c34fb79bf7ca11d69b0fb642889e1aedca cleaned up"
+Sep 20 23:31:07 servidorUbuntu dockerd[757]: time="2020-09-20T23:31:07.437902128Z" level=info msg="ignoring event" module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Sep 20 23:32:04 servidorUbuntu dockerd[757]: time="2020-09-20T23:32:04.288082880Z" level=info msg="Layer sha256:96a6065db5471e0420d4a3db6bc48540eee10047ee9c9f1a049d9530a5d67bf4 cleaned up"
+Sep 20 23:33:12 servidorUbuntu dockerd[757]: time="2020-09-20T23:33:12.965322477Z" level=error msg="stream copy error: reading from a closed fifo"
+Sep 20 23:33:12 servidorUbuntu dockerd[757]: time="2020-09-20T23:33:12.965924411Z" level=error msg="stream copy error: reading from a closed fifo"
+Sep 20 23:33:13 servidorUbuntu dockerd[757]: time="2020-09-20T23:33:13.234322884Z" level=error msg="f68477bac43123c739772d92e2618f54c4467ec38342f4d2f368879550af1768 cleanup: failed to delete container from containerd: no such container"
+Sep 21 00:27:39 servidorUbuntu dockerd[757]: time="2020-09-21T00:27:39.929625088Z" level=info msg="ignoring event" module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+● docker.service - Docker Application Container Engine
+   Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sun 2020-09-20 23:17:45 UTC; 1h 10min ago
+     Docs: https://docs.docker.com
+ Main PID: 757 (dockerd)
+    Tasks: 24
+   CGroup: /system.slice/docker.service
+           ├─ 757 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+           ├─3230 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 9080 -container-ip 172.17.0.2 -container-port 80
+           └─3565 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 2500 -container-ip 172.17.0.3 -container-port 5000
+
+Sep 20 23:28:44 servidorUbuntu dockerd[757]: time="2020-09-20T23:28:44.290500175Z" level=info msg="Layer sha256:7af52a287280a07d00514682ea94c0c34fb79bf7ca11d69b0fb642889e1aedca cleaned up"
+Sep 20 23:29:04 servidorUbuntu dockerd[757]: time="2020-09-20T23:29:04.764870462Z" level=info msg="ignoring event" module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Sep 20 23:29:48 servidorUbuntu dockerd[757]: time="2020-09-20T23:29:48.180896819Z" level=info msg="Layer sha256:7af52a287280a07d00514682ea94c0c34fb79bf7ca11d69b0fb642889e1aedca cleaned up"
+Sep 20 23:31:07 servidorUbuntu dockerd[757]: time="2020-09-20T23:31:07.437902128Z" level=info msg="ignoring event" module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Sep 20 23:32:04 servidorUbuntu dockerd[757]: time="2020-09-20T23:32:04.288082880Z" level=info msg="Layer sha256:96a6065db5471e0420d4a3db6bc48540eee10047ee9c9f1a049d9530a5d67bf4 cleaned up"
+Sep 20 23:33:12 servidorUbuntu dockerd[757]: time="2020-09-20T23:33:12.965322477Z" level=error msg="stream copy error: reading from a closed fifo"
+Sep 20 23:33:12 servidorUbuntu dockerd[757]: time="2020-09-20T23:33:12.965924411Z" level=error msg="stream copy error: reading from a closed fifo"
+Sep 20 23:33:13 servidorUbuntu dockerd[757]: time="2020-09-20T23:33:13.234322884Z" level=error msg="f68477bac43123c739772d92e2618f54c4467ec38342f4d2f368879550af1768 cleanup: failed to delete container from containerd: no such container"
+Sep 21 00:27:39 servidorUbuntu dockerd[757]: time="2020-09-21T00:27:39.929625088Z" level=info msg="ignoring event" module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"
+Sep 21 00:28:28 servidorUbuntu dockerd[757]: time="2020-09-21T00:28:28.625098351Z" level=info msg="ignoring event" module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"

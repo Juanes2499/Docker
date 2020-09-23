@@ -1,0 +1,18 @@
+#Create and prepare a conteiner LXC to be used to install Docker
+
+---
+- hosts: docker
+  remote_user: remoto
+  become_user: root
+  become: true
+  tasks:
+    - name: crear contenedor docker
+      shell: lxc launch ubuntu:18.04 docker
+    - name: tiempo de espera contenedor docker
+      shell: sleep 10
+    - name: listar contenedores
+      shell: lxc list >> /vagrant/Archivos_lxd/ContainerList.txt
+    - name: update contenedor docker
+      shell: lxc exec docker -- apt-get update -y
+    - name: upgrade contenedor docker
+      shell: lxc exec docker -- apt-get upgrade -y

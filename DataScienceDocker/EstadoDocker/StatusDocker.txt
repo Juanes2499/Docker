@@ -1,0 +1,19 @@
+● docker.service - Docker Application Container Engine
+   Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2020-09-21 00:26:13 UTC; 2min 51s ago
+     Docs: https://docs.docker.com
+ Main PID: 3595 (dockerd)
+    Tasks: 10
+   CGroup: /system.slice/docker.service
+           └─3595 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+
+Sep 21 00:26:12 servidorUbuntu dockerd[3595]: time="2020-09-21T00:26:12.822811129Z" level=warning msg="Your kernel does not support cgroup rt period"
+Sep 21 00:26:12 servidorUbuntu dockerd[3595]: time="2020-09-21T00:26:12.822895221Z" level=warning msg="Your kernel does not support cgroup rt runtime"
+Sep 21 00:26:12 servidorUbuntu dockerd[3595]: time="2020-09-21T00:26:12.823084760Z" level=info msg="Loading containers: start."
+Sep 21 00:26:13 servidorUbuntu dockerd[3595]: time="2020-09-21T00:26:13.026967559Z" level=info msg="Default bridge (docker0) is assigned with an IP address 172.17.0.0/16. Daemon option --bip can be used to set a preferred IP address"
+Sep 21 00:26:13 servidorUbuntu dockerd[3595]: time="2020-09-21T00:26:13.123503667Z" level=info msg="Loading containers: done."
+Sep 21 00:26:13 servidorUbuntu dockerd[3595]: time="2020-09-21T00:26:13.692922728Z" level=info msg="Docker daemon" commit=369ce74a3c graphdriver(s)=overlay2 version=19.03.6
+Sep 21 00:26:13 servidorUbuntu dockerd[3595]: time="2020-09-21T00:26:13.693243741Z" level=info msg="Daemon has completed initialization"
+Sep 21 00:26:13 servidorUbuntu systemd[1]: Started Docker Application Container Engine.
+Sep 21 00:26:13 servidorUbuntu dockerd[3595]: time="2020-09-21T00:26:13.764335416Z" level=info msg="API listen on /var/run/docker.sock"
+Sep 21 00:29:04 servidorUbuntu dockerd[3595]: time="2020-09-21T00:29:04.185661536Z" level=info msg="ignoring event" module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"

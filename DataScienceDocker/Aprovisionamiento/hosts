@@ -1,0 +1,13 @@
+#Ansible Hosts File Configuration
+
+[dockerpractica]
+docker ansible_host=192.168.100.4
+dockerDS ansible_host=192.168.101.2
+
+[dockerpractica:vars]
+ansible_user=remoto
+ansible_ssh_port=22
+ansible_ssh_password=1234
+ansible_ssh_private_key_file=/home/juane/.ssh/id_rsa
+ansible_sudo_password=vagrant
+ansible_become_password=1234

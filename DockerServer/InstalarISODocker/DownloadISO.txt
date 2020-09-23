@@ -1,0 +1,41 @@
+Using default tag: latest
+latest: Pulling from jdeathe/centos-ssh-apache-php
+ac9208207ada: Pulling fs layer
+15e53631a98d: Pulling fs layer
+c7b2b59d833d: Pulling fs layer
+e223cfd96609: Pulling fs layer
+6fa10da862c7: Pulling fs layer
+9bb31ce85d56: Pulling fs layer
+c9c4c5765119: Pulling fs layer
+51fbce0dccdb: Pulling fs layer
+e223cfd96609: Waiting
+6fa10da862c7: Waiting
+9bb31ce85d56: Waiting
+c9c4c5765119: Waiting
+51fbce0dccdb: Waiting
+c7b2b59d833d: Verifying Checksum
+c7b2b59d833d: Download complete
+e223cfd96609: Verifying Checksum
+e223cfd96609: Download complete
+15e53631a98d: Verifying Checksum
+15e53631a98d: Download complete
+9bb31ce85d56: Verifying Checksum
+9bb31ce85d56: Download complete
+c9c4c5765119: Verifying Checksum
+c9c4c5765119: Download complete
+51fbce0dccdb: Verifying Checksum
+51fbce0dccdb: Download complete
+6fa10da862c7: Verifying Checksum
+6fa10da862c7: Download complete
+ac9208207ada: Verifying Checksum
+ac9208207ada: Download complete
+Using default tag: latest
+latest: Pulling from jdeathe/centos-ssh-apache-php
+Digest: sha256:87ce4b7d85c13a6bda034f7fc935c7a95892224e541d1db220255804a3b801df
+Status: Image is up to date for jdeathe/centos-ssh-apache-php:latest
+docker.io/jdeathe/centos-ssh-apache-php:latest
+Using default tag: latest
+latest: Pulling from jdeathe/centos-ssh-apache-php
+Digest: sha256:87ce4b7d85c13a6bda034f7fc935c7a95892224e541d1db220255804a3b801df
+Status: Image is up to date for jdeathe/centos-ssh-apache-php:latest
+docker.io/jdeathe/centos-ssh-apache-php:latest

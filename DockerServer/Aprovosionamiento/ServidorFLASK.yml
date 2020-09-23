@@ -1,0 +1,49 @@
+#Deploy a Docker container runnig a Flask service with a CentOs image
+
+---
+- hosts: docker
+  remote_user: remoto
+  become_user: root
+  become: true
+  tasks:
+    - name: crear directorio flask si no existe
+      file:
+        path: /home/vagrant/flask
+        state: directory
+        mode: '0755'
+      become: yes
+      become_user: root
+    - name: crear directorio app dentro de flask si no existe
+      file:
+        path: /home/vagrant/flask/app
+        state: directory
+        mode: '0755'
+      become: yes
+      become_user: root
+    - name: copiar Dockerfile a flask 
+      shell: cp /vagrant/ArchivosDF_flask/Dockerfile /home/vagrant/flask
+      become: yes
+      become_user: root
+    - name: copiar el folder app.py a app de flask 
+      shell: cp /vagrant/ArchivosDF_flask/app/app.py /home/vagrant/flask/app
+      become: yes
+      become_user: root
+    - name: copiar el folder data.py a app de flask 
+      shell: cp /vagrant/ArchivosDF_flask/app/data.py /home/vagrant/flask/app
+      become: yes
+      become_user: root
+    - name: copiar archivo requirements.txt a flask
+      shell: cp /vagrant/ArchivosDF_flask/requirements.txt /home/vagrant/flask
+      become: yes
+      become_user: root
+    - name: ejecutar Dockerfile para generar la imágen de flask
+      args:
+        chdir: /home/vagrant/flask
+      shell: docker build -t juanes/flask .
+      become: yes
+      become_user: root
+    - name: crear contenedor myflask con la imagen creada 
+      shell: docker run -d --name myflask -p 2500:5000 juanes/flask:latest
+      become: yes
+      become_user: root
+    

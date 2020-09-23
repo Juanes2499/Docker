@@ -1,0 +1,16 @@
+#Download a CentOs image with ssh, apache and php, and a docker container is deployed with this image
+
+---
+- hosts: docker
+  remote_user: remoto
+  become_user: root
+  become: true
+  tasks:
+    - name: descargar imágen de Docker /InstalarISODocker/DownloadISO.txt
+      shell: sudo docker pull jdeathe/centos-ssh-apache-php >> /vagrant/InstalarISODocker/DownloadISO.txt
+    - name: ver imágenes instaladas /InstalarISODocker/ISOInstalled.txt
+      shell: sudo docker images >> /vagrant/InstalarISODocker/ISOInstalled.txt
+    - name: Ejecutar un contenedor basado en jdeathe/centos-ssh-apache-php /InstalarISODocker/EjecutarContenedor.txt
+      shell: sudo docker run -d --name web1 -p 8800:80 jdeathe/centos-ssh-apache-php >> /vagrant/InstalarISODocker/EjecutarContenedor.txt
+    - name: verificar que contenedores estan corriendo /InstalarISODocker/ContenedoresCorriendo.txt
+      shell: sudo docker ps >> /vagrant/InstalarISODocker/ContenedoresCorriendo.txt

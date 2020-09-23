@@ -1,0 +1,24 @@
+#Install Docker-compose on the virtual machine
+
+---
+- hosts: docker
+  remote_user: remoto
+  become_user: root
+  become: true
+  tasks:
+    - name: instalar Docker-compose
+      shell: sudo curl -L "https://github.com/docker/compose/releases/download/1.27.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+      become: yes
+      become_user: root
+    - name: permisos para Docker-componse
+      shell: chmod +x /usr/local/bin/docker-compose
+      become: yes
+      become_user: root
+    - name: path 
+      shell: ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+      become: yes
+      become_user: root
+    - name: version Docker-compose
+      shell: sudo docker-compose -v >> /vagrant/VersionDockerCompose.txt
+      become: yes
+      become_user: root

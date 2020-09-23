@@ -1,0 +1,6 @@
+cca08d153384887e4b9adc3bfa6ac3906313a3fc1b0be3b755d853e97ae5b5bc
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                  PORTS                  NAMES
+cca08d153384        juanes/centosweb    "/usr/sbin/httpd -D …"   1 second ago        Up Less than a second   0.0.0.0:9080->80/tcp   webtest
+b3c735bc7b853908e01ff7d4534dec5d7aaebaad4ec59245dd22d9a7f86dc316
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                  PORTS                  NAMES
+b3c735bc7b85        juanes/centosweb    "/usr/sbin/httpd -D …"   2 seconds ago       Up Less than a second   0.0.0.0:9080->80/tcp   webtest

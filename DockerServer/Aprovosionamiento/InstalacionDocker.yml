@@ -1,0 +1,17 @@
+
+#Install Docker on the virtual machine
+
+---
+- hosts: docker
+  remote_user: remoto
+  become_user: root
+  become: true
+  tasks:
+    - name: instalar Docker
+      shell: sudo apt install docker.io -y
+    - name: iniciar servicio de docker
+      shell: sudo systemctl start docker
+    - name: habilitar servicio de docker
+      shell: sudo systemctl enable docker
+    - name: verificar version docker
+      shell: docker --version >> /vagrant/VersionDocker.txt

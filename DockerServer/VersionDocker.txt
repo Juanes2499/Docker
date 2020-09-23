@@ -1,0 +1,2 @@
+Docker version 19.03.6, build 369ce74a3c
+Docker version 19.03.6, build 369ce74a3c

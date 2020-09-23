@@ -1,0 +1,45 @@
+#Deploy a Docker container runnig an Apache service with a CentOs image
+
+---
+- hosts: docker
+  remote_user: remoto
+  become_user: root
+  become: true
+  tasks:
+    - name: buscar una imagen de CentOs /TestDockerfile/ResultadoBusqueda.txt
+      shell: docker search centos >> /vagrant/TestDockerfile/ResultadoBusqueda.txt
+      become: yes
+      become_user: root
+    - name: descargar la imagen de CentOs 
+      shell: docker pull centos  
+      become: yes
+      become_user: root
+    - name: crear test-docker si no existe
+      file:
+        path: /home/vagrant/test-docker
+        state: directory
+        mode: '0755'
+      become: yes
+      become_user: root
+    - name: copiar archivos dockerfile a test-docker
+      shell: cp /vagrant/ArchivosDF_test-docker/Dockerfile /home/vagrant/test-docker
+      become: yes
+      become_user: root
+    - name: ejecutar Dockerfile para generar la imágen
+      args:
+        chdir: /home/vagrant/test-docker
+      shell: docker build -t juanes/centosweb .
+      become: yes
+      become_user: root
+    - name: ver imágenes instaladas /TestDockerfile/ISOInstalled.txt
+      shell: docker images >> /vagrant/TestDockerfile/ISOInstalled.txt
+      become: yes
+      become_user: root
+    - name: crear contenedor webtest con la imagen creada /TestDockerfile/RunningContainers.txt
+      shell: docker run -d --name webtest -p 9080:80 juanes/centosweb >> /vagrant/TestDockerfile/RunningContainers.txt
+      become: yes
+      become_user: root
+    - name: verificar creación y ejecución del contenedor /TestDockerfile/RunningContainers.txt
+      shell: docker ps >> /vagrant/TestDockerfile/RunningContainers.txt
+      become: yes
+      become_user: root

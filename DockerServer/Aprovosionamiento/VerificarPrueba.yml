@@ -1,0 +1,17 @@
+#Execute a test to verify if Docker was installed correctly
+
+---
+- hosts: docker
+  remote_user: remoto
+  become_user: root
+  become: true
+  tasks:
+    - name: Verificar que Docker Engine quedo instalado correctamente corriendo la imagen de hello-world /EstadoDocker/HelloWorld.txt
+      shell: sudo docker run hello-world >> /vagrant/EstadoDocker/HelloWorld.txt
+    - name: verificar que Docker esta corriendo /EstadoDocker/StatusDocker.txt
+      shell: sudo systemctl status docker >> /vagrant/EstadoDocker/StatusDocker.txt
+    - name: Ver información de Docker /EstadoDocker/InfoDocker.txt
+      shell: sudo docker info | more >> /vagrant/EstadoDocker/InfoDocker.txt
+    - name: verificar que imágenes de contenedores existe en los repositorios de docker /EstadoDocker/ImagenesDocker.txt
+      shell: sudo docker search centos-ssh-apache >> /vagrant/EstadoDocker/ImagenesDocker.txt
+

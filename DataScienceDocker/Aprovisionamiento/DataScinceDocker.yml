@@ -1,0 +1,29 @@
+#Deploy a Docker container running Jupiter Notebook
+
+---
+- hosts: dockerDS
+  remote_user: remoto
+  become_user: root
+  become: true
+  tasks:
+    - name: crear carpeta data-sience
+      file:
+        path: /home/vagrant/data-sience
+        state: directory
+        mode: '0755'
+      become: yes
+      become_user: root
+    - name: copiar archivos dockerfile a data-sience
+      shell: cp /vagrant/ArchivosDF_dataScience/Dockerfile /home/vagrant/data-sience
+      become: yes
+      become_user: root
+    - name: ejecutar Dockerfile para generar la imágen
+      args:
+        chdir: /home/vagrant/data-sience
+      shell: docker build -t juanes/datasience .
+      become: yes
+      become_user: root
+    - name: crear contenedor webtest con la imagen creada /TestDockerfile/RunningContainers.txt
+      shell: docker run -p 8888:8888 juanes/datasience:latest >> /vagrant/token.txt
+      become: yes
+      become_user: root

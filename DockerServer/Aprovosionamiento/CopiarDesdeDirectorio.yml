@@ -1,0 +1,46 @@
+#Deploy a Docker container with personalized files for Apache service
+
+---
+- hosts: docker
+  remote_user: remoto
+  become_user: root
+  become: true
+  tasks:
+    - name: crear directorio test-docker2 si no existe
+      file:
+        path: /home/vagrant/test-docker2
+        state: directory
+        mode: '0755'
+      become: yes
+      become_user: root
+    - name: crear directorio voldocker dentro de test-docker2 si no existe
+      file:
+        path: /home/vagrant/test-docker2/voldocker
+        state: directory
+        mode: '0755'
+      become: yes
+      become_user: root
+    - name: copiar Dockerfile a test-docker2 
+      shell: cp /vagrant/ArchivosDF_test-docker2/Dockerfile /home/vagrant/test-docker2
+      become: yes
+      become_user: root
+    - name: copiar index.html a voldocker de test-docker2 
+      shell: cp /vagrant/ArchivosDF_test-docker2/index.html /home/vagrant/test-docker2/voldocker
+      become: yes
+      become_user: root
+    - name: copiar pagina.html a voldocker de test-docker2 
+      shell: cp /vagrant/ArchivosDF_test-docker2/pagina.html /home/vagrant/test-docker2/voldocker
+      become: yes
+      become_user: root
+    - name: ejecutar Dockerfile para generar la imágen que tiene estos dos archivos
+      args:
+        chdir: /home/vagrant/test-docker2
+      shell: docker build -t juanes/volumenes .
+      become: yes
+      become_user: root
+    - name: crear contenedor webtest2 con la imagen creada 
+      shell: docker run -d --name webtest2 -p 9180:80 juanes/volumenes
+      become: yes
+      become_user: root
+    
+

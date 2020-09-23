@@ -1,0 +1,41 @@
+#Deploy a Docker container with FTP service 
+
+---
+- hosts: docker
+  remote_user: remoto
+  become_user: root
+  become: true
+  tasks:
+    - name: crear directorio ftp si no existe
+      file:
+        path: /home/vagrant/ftp
+        state: directory
+        mode: '0755'
+      become: yes
+      become_user: root
+    - name: crear directorio voldocker dentro de FTP si no existe
+      file:
+        path: /home/vagrant/ftp/voldocker
+        state: directory
+        mode: '0755'
+      become: yes
+      become_user: root
+    - name: copiar Dockerfile a ftp 
+      shell: cp /vagrant/ArchivosDF_FTP/Dockerfile /home/vagrant/ftp
+      become: yes
+      become_user: root
+    - name: copiar archivo prueba.txt a ftp
+      shell: cp /vagrant/ArchivosDF_FTP/prueba.txt /home/vagrant/ftp
+      become: yes
+      become_user: root
+    - name: ejecutar Dockerfile para generar la imágen de ftp
+      args:
+        chdir: /home/vagrant/ftp
+      shell: docker build -t juanes/ftp .
+      become: yes
+      become_user: root
+    - name: crear contenedor myftp con la imagen creada 
+      shell: docker run -d --name myftp -p 9921:21 juanes/ftp:latest
+      become: yes
+      become_user: root
+    

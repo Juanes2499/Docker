@@ -1,0 +1,22 @@
+#Prepere and install Docker on a LXC container
+
+---
+- hosts: docker
+  remote_user: remoto
+  become_user: root
+  become: true
+  tasks:
+    - name: permitir que lxc arrante otros contenedores
+      shell: lxc config set docker security.nesting true
+    - name: instalar Docker
+      shell: lxc exec docker -- sudo apt install docker.io -y
+    - name: descargar la imagen de CentOs dentro del contenedor lxc docker
+      shell: lxc exec docker -- docker pull centos  
+    - name: crear carpeta voldocker dentro del contenedor lxc docker
+      shell: lxc exec docker -- mkdir voldocker
+    - name: copiar archivo Dockerfile dentro del contenedor lxd docker
+      shell: lxc file push /vagrant/Archivos_lxd/Dockerfile docker/root/Dockerfile
+    - name: copiar archivo index.html  dentro del contenedor lxd docker en la carpeta voldocker
+      shell: lxc file push /vagrant/Archivos_lxd/index.html docker/root/voldocker/index.html
+    - name: copiar archivo pagina.html  dentro del contenedor lxd docker en la carpeta voldocker
+      shell: lxc file push /vagrant/Archivos_lxd/pagina.html docker/root/voldocker/pagina.html
