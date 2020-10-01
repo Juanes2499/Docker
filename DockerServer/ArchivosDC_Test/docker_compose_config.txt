@@ -1,0 +1,39 @@
+services:
+  database:
+    image: redis
+  web:
+    image: nginx
+version: '3'
+
+services:
+  database:
+    image: redis
+  web:
+    image: nginx
+version: '3'
+
+services:
+  database:
+    image: redis
+  web:
+    image: nginx
+version: '3'
+
+services:
+  database:
+    image: redis
+  web:
+    image: nginx
+    ports:
+    - 1080:80/tcp
+version: '3'
+
+services:
+  database:
+    image: redis
+  web:
+    image: nginx
+    ports:
+    - 1080:80/tcp
+version: '3'
+

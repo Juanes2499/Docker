@@ -1,0 +1,10 @@
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+c2c8a43ed83e        nginx               "/docker-entrypoint.…"   3 minutes ago       Up 3 minutes        80/tcp              dockercomposetest_web_1
+e235920d87c9        redis               "docker-entrypoint.s…"   3 minutes ago       Up 3 minutes        6379/tcp            dockercomposetest_database_1
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                  PORTS                  NAMES
+64cdd3c6d66f        redis               "docker-entrypoint.s…"   1 second ago        Up Less than a second   6379/tcp               dockercomposetest_database_1
+a75c47ccb311        nginx               "/docker-entrypoint.…"   1 second ago        Up Less than a second   0.0.0.0:1080->80/tcp   dockercomposetest_web_1
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                  PORTS                  NAMES
+2e8f278cb4b6        redis               "docker-entrypoint.s…"   2 seconds ago       Up 1 second             6379/tcp               dockercomposetest_database_1
+de427048085b        nginx               "/docker-entrypoint.…"   2 seconds ago       Up Less than a second   0.0.0.0:1080->80/tcp   dockercomposetest_web_1
+e26b1f65c1a8        panubo/vsftpd       "/entry.sh vsftpd"       37 seconds ago      Up 36 seconds                                  dockercomposeftp_vsftpd_1

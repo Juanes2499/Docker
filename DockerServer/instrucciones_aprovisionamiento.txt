@@ -11,7 +11,10 @@ Orden en que se deben ir ejecutando los archivos de aprovisionamiento.
 8. ServidorFLASK.yml se ejecuta mediante aprovisionamiento Ansible en WSL.
 9. DockerLxd.yml se ejecuta mediante aprovisionamiento Ansible en WSL.
 10. DockerLxdInstalar.yml se ejecuta mediante aprovisionamiento Ansible en WSL.
-11. DockerLxdEjecutar.yml se ejecuta mediante aprovisionamiento Ansible en WSL
+11. DockerLxdEjecutar.yml se ejecuta mediante aprovisionamiento Ansible en WSL.
+12. dockerComposeFTP.yml se ejecuta mediante aprovisionamiento Ansible en WSL
+13. dockerComposeFlaskMySql.yml se ejecuta mediante aprovisionamiento Ansible en WSL
+14. dockerComposeWordpress.yml se ejecuta mediante aprovisionamiento Ansible en WSL
 
 
 

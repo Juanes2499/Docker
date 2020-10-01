@@ -1,1 +1,0 @@
-docker-compose version 1.27.3, build 4092ae5d

@@ -1,0 +1,36 @@
+#Deploy a Docker-compose container named Test
+
+---
+- hosts: docker
+  remote_user: remoto
+  become_user: root
+  become: true
+  tasks:
+    - name: crear directorio dockerComposeTest si no existe
+      file:
+        path: /home/vagrant/dockerComposeTest
+        state: directory
+        mode: '0755'
+      become: yes
+      become_user: root
+    - name: copiar el archivo docker-compose.yml a dockerComposeTesttp 
+      shell: cp /vagrant/ArchivosDC_Test/docker-compose.yml /home/vagrant/dockerComposeTest
+      become: yes
+      become_user: root
+    - name: ejecutar docker-compose config para verificar la configuración de docker-compose
+      args:
+        chdir: /home/vagrant/dockerComposeTest
+      shell: docker-compose config >> /vagrant/ArchivosDC_Test/docker_compose_config.txt
+      become: yes
+      become_user: root
+    - name: correr docker-compose
+      args:
+        chdir: /home/vagrant/dockerComposeTest
+      shell: docker-compose up -d
+      become: yes
+      become_user: root
+    - name: verificamos que los contenedores docker-compose esten corriendo
+      shell: docker ps >> /vagrant/ArchivosDC_Test/ContenedoresCorriendo.txt
+      become: yes
+      become_user: root
+    

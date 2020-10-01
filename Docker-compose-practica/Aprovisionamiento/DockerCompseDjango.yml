@@ -1,0 +1,25 @@
+---
+- hosts: docker
+  remote_user: remoto
+  become_user: root
+  become: true
+  tasks:
+    - name: crear directorio dockerComposeDjango si no existe
+      file:
+        path: /home/vagrant/dockerComposeDjango
+        state: directory
+        mode: "0755"
+      become: yes
+      become_user: root
+    - name: copiar la carpeta Dockerfile a dockerComposeDjango
+      shell: cp -r /vagrant/ArchivosDC_Django/Dockerfile /home/vagrant/dockerComposeDjango
+      become: yes
+      become_user: root
+    - name: copiar la carpeta requirements.txt a dockerComposeDjango
+      shell: cp -r /vagrant/ArchivosDC_Django/requirements.txt /home/vagrant/dockerComposeDjango
+      become: yes
+      become_user: root
+    - name: copiar el archivo docker-compose.yml a dockerComposeDjango
+      shell: cp /vagrant/ArchivosDC_Django/docker-compose.yml /home/vagrant/dockerComposeDjango
+      become: yes
+      become_user: root

@@ -1,0 +1,16 @@
+CONTAINER ID        IMAGE               COMMAND              CREATED              STATUS              PORTS               NAMES
+a174e5aadb1a        panubo/vsftpd       "/entry.sh vsftpd"   About a minute ago   Up About a minute                       dockercomposeftp_vsftpd_1
+CONTAINER ID        IMAGE               COMMAND              CREATED             STATUS                  PORTS               NAMES
+0c583f69e5fc        panubo/vsftpd       "/entry.sh vsftpd"   2 seconds ago       Up Less than a second                       dockercomposeftp_vsftpd_1
+CONTAINER ID        IMAGE               COMMAND              CREATED             STATUS                  PORTS               NAMES
+6d9cf8cb1d95        panubo/vsftpd       "/entry.sh vsftpd"   2 seconds ago       Up Less than a second                       dockercomposeftp_vsftpd_1
+CONTAINER ID        IMAGE               COMMAND              CREATED             STATUS                  PORTS               NAMES
+e26b1f65c1a8        panubo/vsftpd       "/entry.sh vsftpd"   2 seconds ago       Up Less than a second                       dockercomposeftp_vsftpd_1
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                  PORTS                  NAMES
+9d521edea93f        panubo/vsftpd       "/entry.sh vsftpd"       1 second ago        Up Less than a second                          dockercomposeftp_vsftpd_1
+2e8f278cb4b6        redis               "docker-entrypoint.s…"   2 minutes ago       Up 2 minutes            6379/tcp               dockercomposetest_database_1
+de427048085b        nginx               "/docker-entrypoint.…"   2 minutes ago       Up 2 minutes            0.0.0.0:1080->80/tcp   dockercomposetest_web_1
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                  PORTS                  NAMES
+6876ac35fee3        panubo/vsftpd       "/entry.sh vsftpd"       1 second ago        Up Less than a second                          dockercomposeftp_vsftpd_1
+2e8f278cb4b6        redis               "docker-entrypoint.s…"   5 minutes ago       Up 5 minutes            6379/tcp               dockercomposetest_database_1
+de427048085b        nginx               "/docker-entrypoint.…"   5 minutes ago       Up 5 minutes            0.0.0.0:1080->80/tcp   dockercomposetest_web_1

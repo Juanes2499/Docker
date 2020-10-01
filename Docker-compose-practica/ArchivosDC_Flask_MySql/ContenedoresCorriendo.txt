@@ -1,0 +1,5 @@
+CONTAINER ID        IMAGE                         COMMAND                  CREATED             STATUS              PORTS                                NAMES
+e1c9dd361845        wordpress:latest              "docker-entrypoint.s…"   5 minutes ago       Up 5 minutes        0.0.0.0:8000->80/tcp                 dockercomposewordpress_wordpress_1
+3c96028090e1        mysql:5.7                     "docker-entrypoint.s…"   5 minutes ago       Up 5 minutes        3306/tcp, 33060/tcp                  dockercomposewordpress_db_1
+632c9e52caa7        dockercomposeflaskmysql_app   "/bin/sh -c 'python …"   46 hours ago        Up 4 hours          0.0.0.0:5000->5000/tcp               dockercomposeflaskmysql_app_1
+1622ebb6ed4f        mysql:5.7                     "docker-entrypoint.s…"   46 hours ago        Up 4 hours          33060/tcp, 0.0.0.0:32000->3306/tcp   dockercomposeflaskmysql_db_1

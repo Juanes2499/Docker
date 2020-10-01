@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  vsftpd:
+    image: panubo/vsftpd
+    environment:
+      - FTP_USER=ComposeUserFtp
+      - FTP_PASSWORD=1234
+    volumes:
+      - /mnt/storage/media:/srv
+    expose:
+      - 21
+    network_mode: host

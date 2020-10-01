@@ -1,0 +1,28 @@
+---
+- hosts: docker
+  remote_user: remoto
+  become_user: root
+  become: true
+  tasks:
+    - name: crear directorio dockerComposeWordPress si no existe
+      file:
+        path: /home/vagrant/dockerComposeWordPress
+        state: directory
+        mode: "0755"
+      become: yes
+      become_user: root
+    - name: copiar el archivo docker-compose.yml a dockerComposeWordPress
+      shell: cp /vagrant/ArchivosDC_Wordpress/docker-compose.yml /home/vagrant/dockerComposeWordPress
+      become: yes
+      become_user: root
+    - name: correr docker-compose
+      args:
+        chdir: /home/vagrant/dockerComposeWordPress
+      shell: docker-compose up -d
+      become: yes
+      become_user: root
+    - name: verificamos que los contenedores docker-compose esten corriendo
+      shell: docker ps >> /vagrant/ArchivosDC_Wordpress/ContenedoresCorriendo.txt
+      become: yes
+      become_user: root
+    
