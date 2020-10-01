@@ -6,3 +6,8 @@ Orden en que se deben ir ejecutando los archivos de aprovisionamiento.
 4. DataScinceDocker.yml se ejecuta mediante aprovisionamiento Ansible en WSL.
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 123cbe1cad91c90721ad5019cc7ef670c6560c84
